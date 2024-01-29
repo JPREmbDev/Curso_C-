@@ -1,0 +1,85 @@
+Introducción a los Vectores en C++
+
+En C++ avanzado, el término "vector" se refiere principalmente a la plantilla de la biblioteca estándar 
+`std::vector`, que es una estructura de datos dinámica y dinámica que proporciona una implementación eficiente
+de un contenedor de secuencia. Aquí tienes una explicación detallada de `std::vector`:
+
+### `std::vector` en C++:
+
+1. **Declaración e Inclusión:**
+   ```cpp
+   #include <vector>
+   using namespace std;
+   ```
+
+2. **Sintaxis de Declaración:**
+   ```cpp
+   vector<T> nombre_del_vector; // Donde T es el tipo de elemento que contendrá el vector.
+   ```
+
+3. **Inicialización:**
+   - **Por defecto:**
+     ```cpp
+     vector<int> numeros; // Un vector vacío de enteros.
+     ```
+   - **Con Tamaño y Valor Inicial:**
+     ```cpp
+     vector<int> numeros(5, 0); // Un vector de 5 enteros, todos inicializados a 0.
+     ```
+   - **A partir de Otro Vector:**
+     ```cpp
+     vector<int> copia(numeros); // Crea una copia de otro vector.
+     ```
+
+4. **Acceso a Elementos:**
+   - **Operador de Acceso:**
+     ```cpp
+     int valor = numeros[2]; // Accede al tercer elemento (índice 2) del vector.
+     ```
+   - **Método `at()`:**
+     ```cpp
+     int valor = numeros.at(2); // Accede al tercer elemento de manera segura, lanzará una excepción si el índice está fuera de rango.
+     ```
+   - **Iteradores:**
+     ```cpp
+     for (auto it = numeros.begin(); it != numeros.end(); ++it) {
+         // *it accede al valor actual
+     }
+     ```
+
+5. **Funcionalidades Principales:**
+   - **`push_back()` y `pop_back()`:**
+     ```cpp
+     numeros.push_back(42); // Añade el valor 42 al final del vector.
+     numeros.pop_back();    // Elimina el último elemento del vector.
+     ```
+   - **`size()` y `empty()`:**
+     ```cpp
+     size_t tamano = numeros.size();  // Devuelve el número de elementos en el vector.
+     bool vacio = numeros.empty();    // Devuelve true si el vector está vacío.
+     ```
+   - **`clear()`:**
+     ```cpp
+     numeros.clear(); // Elimina todos los elementos del vector.
+     ```
+   - **`resize()`:**
+     ```cpp
+     numeros.resize(10); // Ajusta el tamaño del vector a 10, agregando o eliminando elementos según sea necesario.
+     ```
+
+6. **Eficiencia:**
+   - `std::vector` garantiza que los elementos estén almacenados de forma contigua en la memoria, lo que mejora el 
+   rendimiento del acceso a través de iteradores y punteros.
+
+7. **Ventajas:**
+   - Proporciona un tamaño dinámico que se puede ajustar durante la ejecución.
+   - Administra automáticamente la memoria, evitando fugas y corrupciones de memoria.
+   - Ofrece una amplia gama de funciones y métodos para manipular y trabajar con los elementos del vector.
+
+8. **Consideraciones:**
+   - `std::vector` es una excelente elección cuando necesitas una colección de elementos que puede cambiar de tamaño de manera 
+   eficiente y no sabes de antemano cuántos elementos necesitarás.
+
+Recuerda que `std::vector` es solo uno de los contenedores proporcionados por la biblioteca estándar de C++. 
+Hay otros contenedores, como `std::list`, `std::deque`, `std::array`, y `std::map`, cada uno diseñado para casos de
+uso específicos. La elección del contenedor dependerá de los requisitos particulares de tu aplicación.

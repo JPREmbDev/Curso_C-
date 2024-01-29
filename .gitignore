@@ -1,0 +1,16 @@
+# Ignorar archivos temporales
+*.tmp
+
+# Ignorar archivos de compilación
+*.o
+*.out
+*.exe
+# Ignorar directorios de dependencias
+node_modules/
+
+# Ignorar archivos de configuración local
+.env
+.codlite
+*.zip
+*.project
+*.mk
